@@ -24,7 +24,7 @@ cpu_sys=(
   width=0
   graph.color=$RED
   graph.fill_color=$RED
-  padding_right=-5
+  padding_right=-10
   label.drawing=off
   icon.drawing=off
   background.height=25
@@ -34,7 +34,7 @@ cpu_sys=(
 
 cpu_user=(
   graph.color=$BLUE
-  padding_right=-5
+  padding_right=-10
   label.drawing=off
   icon.drawing=off
   background.height=25

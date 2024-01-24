@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-read UP DOWN <<< "$(transmission-remote -l | awk 'NR>1 {up=$4; down=$5} END {print up, down}')"
+read UP DOWN <<< "$(netstat -ib | awk '/en0/ {gsub(/M/,"",$7); gsub(/M/,"",$10); print $7, $10}')"
 NUMBERS=($UP $DOWN)
 
 # Number formatting. Thanks, ChatGPT!
@@ -8,8 +8,8 @@ for ((i=0; i<${#NUMBERS[@]}; i++)); do
     CURRENT_NUMBER=${NUMBERS[i]}
 
     # Check if the number is greater than 999
-    if (( $(echo "$CURRENT_NUMBER > 999" | bc -l) )); then
-        FORMATTED_NUMBER=$(echo "scale=1; $CURRENT_NUMBER / 1000" | bc -l)
+    if (( $(echo "$CURRENT_NUMBER > 999999" | bc -l) )); then
+        FORMATTED_NUMBER=$(echo "scale=1; $CURRENT_NUMBER / 1000000" | bc -l)
         SUFFIX="MB"
     else
         FORMATTED_NUMBER=$(echo "scale=1; $CURRENT_NUMBER" | bc -l)
@@ -29,7 +29,7 @@ done
 if [[ "$UP" == "0.0" && "$DOWN" == "0.0" ]]; then
   args+=(background.color=0x40eeeeee)
 else
-  args+=(background.color=0xfff78c6c)
+  args+=(background.color=0xff669bbc)
 fi
 
 

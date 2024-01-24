@@ -21,15 +21,15 @@ volume_change() {
   sketchybar --set volume_icon label=$ICON
 
   sketchybar --set $NAME slider.percentage=$INFO \
-             --animate tanh 30 --set $NAME slider.width=$WIDTH 
+  #            --animate tanh 30 --set $NAME slider.width=$WIDTH 
 
-  sleep 2
+  # sleep 2
 
-  # Check wether the volume was changed another time while sleeping
-  FINAL_PERCENTAGE=$(sketchybar --query $NAME | jq -r ".slider.percentage")
-  if [ "$FINAL_PERCENTAGE" -eq "$INFO" ]; then
-    sketchybar --animate tanh 30 --set $NAME slider.width=0
-  fi
+  # # Check wether the volume was changed another time while sleeping
+  # FINAL_PERCENTAGE=$(sketchybar --query $NAME | jq -r ".slider.percentage")
+  # if [ "$FINAL_PERCENTAGE" -eq "$INFO" ]; then
+  #   sketchybar --animate tanh 30 --set $NAME slider.width=0
+  # fi
 }
 
 mouse_clicked() {

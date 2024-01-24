@@ -1,96 +1,30 @@
-#!/usr/bin/env sh
+# ### cpu Widget ###
+# sketchybar --add item  cpu right                                                   \
+#            --set cpu   update_freq=5                                              \
+#                        icon.font="Font Awesome 6 Free:Solid:15.4"                  \
+#                        icon.padding_right=4                                        \
+#                        icon.color=0xfff6768e                                       \
+#                        icon.y_offset=1                                             \
+#                        label.font="$FONT:Medium:12.0"                                \
+#                        label.color=0xffdfe1ea                                      \
+#                        label.padding_right=8                                       \
+#                        background.color=0xff252731                                 \
+#                        background.height=33                                      \
+#                        background.corner_radius=20                                   \
+#                        background.padding_right=3                                  \
+#                        script="$PLUGIN_DIR/cpu.sh"                                 \
+#                        icon.padding_left=16 label.padding_right=16                   \
 
-HAS_BATTERY=$(if [ "$(pmset -g batt | grep "Battery")" = "" ]; then echo "false"; else echo "true"; fi)
-SVIM_POPUP_SCRIPT="sketchybar --set system.svim popup.drawing=off"
-
-sketchybar --add       event              window_focus                                  \
-           --add       event              wifi                                          \
-           --add       event              battery                                       \
-                                                                                        \
-           --add       item               system.svim q                                 \
-           --set       system.svim        popup.align=left                              \
-                                          icon=$VIM                                     \
-                                          label="[!]"                                   \
-                                          icon.font="Hack Nerd Font Mono:Bold:28.0"     \
-                                          label.font="Hack Nerd Font Mono:Bold:13.0"    \
-                                          icon.color=$ICON_COLOR                        \
-                                          script="$SVIM_POPUP_SCRIPT"                   \
-           --subscribe system.svim        front_app_switched window_focus               \
-                                                                                        \
-           --add       item               svim.cmdline popup.system.svim                \
-           --set       svim.cmdline       icon="Command: "                              \
-                                                                                        \
-           --add       item               system.yabai q                                \
-           --set       system.yabai       script="$PLUGIN_DIR/yabai.sh"                 \
-                                          icon.font="$FONT:Bold:16.0"                   \
-                                          label.drawing=off                             \
-                                          icon.width=30                                 \
-                                          icon=$YABAI_GRID                              \
-                                          icon.color=$GREEN                             \
-                                          updates=on                                    \
-           --subscribe system.yabai       window_focus mouse.clicked                    \
-                                                                                        \
-           --clone     system.label       label_template                                \
-           --set       system.label       label=Window                                  \
-                                          position=q                                    \
-                                          drawing=on                                    \
-                                          background.padding_right=0                    \
-                                          script="$PLUGIN_DIR/window_title.sh"          \
-           --subscribe system.label       front_app_switched                            \
-                                                                                        \
-           --add       alias              "Control Center,Battery" e                    \
-           --set "Control Center,Battery" update_freq=4                                 \
-                                          drawing=$HAS_BATTERY                          \
-                                          label.drawing=off                             \
-                                          background.padding_right=-3                   \
-                                          background.padding_left=-9                    \
-                                          click_script="sketchybar --trigger battery;
-                                                        $POPUP_CLICK_SCRIPT"            \
-                                          popup.align=right                             \
-                                                                                        \
-           --add       item               battery.details popup."Control Center,Battery"\
-           --set       battery.details    updates=$HAS_BATTERY                          \
-                                          script="$PLUGIN_DIR/battery.sh"               \
-                                          label.padding_right=8                         \
-           --subscribe battery.details    battery                                       \
-                                                                                        \
-           --add       alias              "Control Center,WiFi" e                       \
-           --set    "Control Center,WiFi" update_freq=4                                 \
-                                          icon.drawing=off                              \
-                                          label.drawing=off                             \
-                                          background.padding_left=-4                    \
-                                          background.padding_right=-4                   \
-                                          click_script="sketchybar --trigger wifi;
-                                                        $POPUP_CLICK_SCRIPT"            \
-                                          popup.align=right                             \
-                                                                                        \
-           --add       item               wifi.details popup."Control Center,WiFi"      \
-           --set       wifi.details       updates=on                                    \
-                                          script="$PLUGIN_DIR/wifi.sh"                  \
-                                          label.padding_right=5                         \
-           --subscribe wifi.details       wifi                                          \
-                                                                                        \
-           --add       alias              "Control Center,Sound" e                      \
-           --set   "Control Center,Sound" update_freq=4                                 \
-                                          icon.drawing=off                              \
-                                          label.drawing=off                             \
-                                          background.padding_left=-4                    \
-                                          background.padding_right=-4                   \
-                                          click_script="$POPUP_CLICK_SCRIPT"            \
-                                          popup.horizontal=on                           \
-                                          popup.align=right                             \
-                                          popup.background.image.scale=0.5              \
-                                          popup.background.color=$TRANSPARENT           \
-                                                                                        \
-           --add       item               system.mic e                                  \
-           --set       system.mic         update_freq=100                               \
-                                          label.drawing=off                             \
-                                          script="$PLUGIN_DIR/mic.sh"                   \
-           --subscribe system.mic         mouse.clicked                                 \
-                                                                                        \
-           --add       bracket            system                                        \
-                                          system.label                                  \
-                                          system.yabai                                  \
-                                          system.svim                                   \
-                                          system.mic                                    \
-                                          "Control Center,Sound"
+### mem Widget ###
+sketchybar --add item  mem right                                                   \
+           --set mem   update_freq=5                                               \
+                       icon.font="$FONT:Regular:15.4"                  \
+                       icon.padding_right=4                                        \
+                       icon.color=0xff4ed2e3                                       \
+                       icon.y_offset=1                                             \
+                       label.font="$FONT:Bold:12.0"                              \
+                       label.color=0xffdfe1ea                                      \
+                       label.padding_right=8                                       \
+                       script="$PLUGIN_DIR/mem.sh"                                 \
+                        icon.padding_left=5                                        \
+                       label.padding_right=5                                       \

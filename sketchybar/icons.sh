@@ -53,6 +53,9 @@ WIFI_DISCONNECTED=􀙈
 BLUETOOTH_CONNECTED=󰂯
 BLUETOOTH_DISCONNECTED=󰂲
 
+# Whatsapp
+WHATSAPP=
+
 export ICON_APP=󰣆 # fallback app
 export ICON_TERM=󰆍 # fallback terminal app, terminal, warp, iterm2
 export ICON_PACKAGE=󰏓 # brew
