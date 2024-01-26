@@ -1,6 +1,6 @@
 sketchybar --add item playing left                                                 \
            --set playing update_freq=5                                             \
-                       padding_left=100                                            \
+                       padding_left=80                                            \
                        icon.color="$YELLOW"                                        \
                        label.font="$FONT:Bold:12.0"                                \
                        label.color="$YELLOW"                                       \

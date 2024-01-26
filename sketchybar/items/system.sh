@@ -1,4 +1,4 @@
-# ### cpu Widget ###
+### cpu Widget ###
 # sketchybar --add item  cpu right                                                   \
 #            --set cpu   update_freq=5                                              \
 #                        icon.font="Font Awesome 6 Free:Solid:15.4"                  \

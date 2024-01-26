@@ -15,16 +15,13 @@ do
     associated_space=$sid
     icon=${SPACE_ICONS[i]}
     icon.padding_left=10
-    icon.padding_right=15
+    icon.padding_right=10
     padding_left=2
     padding_right=2
-    label.padding_right=20
+    label.padding_right=2
     icon.highlight_color=$RED
     label.font="sketchybar-app-font:Regular:16.0"
-    label.background.height=26
-    label.background.drawing=on
-    label.background.color=$BACKGROUND_2
-    label.background.corner_radius=8
+    label.highlight_color=$RED
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )
