@@ -26,5 +26,5 @@ sketchybar --add item  mem right                                                
                        label.color=0xffdfe1ea                                      \
                        label.padding_right=8                                       \
                        script="$PLUGIN_DIR/mem.sh"                                 \
-                        icon.padding_left=5                                        \
+                       icon.padding_left=5                                        \
                        label.padding_right=5                                       \
