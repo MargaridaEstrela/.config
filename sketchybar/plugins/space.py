@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os, json, re
+import os, json, re, time
 
 ICON_MAP = [
     {"regex": r"App Store", "icon": ""},
@@ -73,8 +73,11 @@ def to_formatted_icon(app, c):
 def to_formatted_icons(apps):
     # Filter out entries without icons
     apps = {app: cnt for app, cnt in apps.items() if to_icon(app)}
-    return '  '.join([to_formatted_icon(app, cnt) for app, cnt in apps.items()])
+    return '   '.join([to_formatted_icon(app, cnt) for app, cnt in apps.items()])
 
+def reset_labels_and_add_icons(spaces):
+    args = ' '.join([f'--set space.{space} label="{to_formatted_icons(apps)}" label.drawing=on' for space, apps in spaces.items()])
+    os.system(f'sketchybar --set "/space\..*/" label="" label.drawing=off {args}')
 
 spaces = {}
 apps = json.loads(os.popen('yabai -m query --windows').read())
@@ -82,7 +85,10 @@ for app in apps:
     spaces[app['space']] = spaces.get(app['space'], {})
     spaces[app['space']][app['app']] = spaces[app['space']].get(app['app'], 0) + 1
 
-args = ' '.join([f'--set space.{space} label="{to_formatted_icons(apps)}" label.drawing=on' for space, apps in spaces.items()])
-default_args = "--set spaces_bracket drawing=off --set '/space\..*/' background.drawing=on --animate sin 10"
+# Reset the labels for all spaces
+reset_labels_and_add_icons(spaces)
 
-os.system(f'sketchybar -m {default_args} {args}')
+# Additional arguments for the default settings
+default_args = "--set spaces_bracket drawing=off --set '/space\..*/' background.drawing=on"
+
+os.system(f'sketchybar -m {default_args}')
