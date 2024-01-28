@@ -17,10 +17,10 @@ do
     icon.padding_left=10
     icon.padding_right=10
     padding_left=2
-    padding_right=2
+    padding_right=5
     label.padding_right=2
     icon.highlight_color=$RED
-    label.font="sketchybar-app-font:Regular:16.0"
+    label.font="$FONT:Regular:16.0"
     label.highlight_color=$RED
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"

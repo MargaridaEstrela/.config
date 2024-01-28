@@ -38,7 +38,7 @@ ICON_MAP = [
     {"regex": r"Spotify", "icon": "󰓇"},
     {"regex": r"Stremio", "icon": "􁚱"},
     {"regex": r"System Preferences|System Settings", "icon": "􀍟"},
-    {"regex": r"WhatsApp", "icon": ""},
+    {"regex": r"WhatsApp", "icon": "􀌤"},
     {"regex": r"Xcode", "icon": "󰰰"},
 ]
 
