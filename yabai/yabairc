@@ -36,4 +36,6 @@ yabai -m rule --add app="^Parallels Desktop$" manage=off
 yabai -m rule --add app="^WhatsApp.app$" manage=off
 yabai -m rule --add app="^Python$" manage=off
 
+yabai -m config external_bar all:32:0
+
 echo "yabai configuration loaded.."
