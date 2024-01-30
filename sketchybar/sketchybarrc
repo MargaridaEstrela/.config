@@ -56,9 +56,12 @@ defaults=(
   popup.background.border_width=1
   popup.background.corner_radius=5
   popup.background.border_color=$POPUP_BORDER_COLOR
-  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.background.color=$BAR_COLOR
   popup.blur_radius=20
   popup.background.shadow.drawing=on
+  popup.align=left
+  popup.y_offset=5
+  popup.padding_right=10
   scroll_texts=on
 )
 
