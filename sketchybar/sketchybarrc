@@ -85,7 +85,6 @@ source "$ITEM_DIR/system.sh"
 # source "$ITEM_DIR/transmission.sh"
 source "$ITEM_DIR/cpu.sh"
 
-
 sketchybar --hotload on
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
