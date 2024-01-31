@@ -19,9 +19,9 @@ do
     padding_left=2
     padding_right=5
     label.padding_right=2
-    icon.highlight_color=$RED
+    icon.highlight_color=$RED_APPLE
     label.font="$FONT:Regular:16.0"
-    label.highlight_color=$RED
+    label.highlight_color=$RED_APPLE  
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )

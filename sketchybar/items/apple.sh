@@ -7,9 +7,11 @@ apple_logo=(
   icon=$APPLE
   icon.font="$FONT:Black:16.0"
   icon.color="$WHITE"
-  icon.padding_right=5
+  icon.padding_left=10
+  icon.padding_right=12
   label.drawing=off
   click_script="$POPUP_CLICK_SCRIPT"
+  background.color=0xfce06666
 )
 
 apple_prefs=(

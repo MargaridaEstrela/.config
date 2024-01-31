@@ -5,7 +5,7 @@ cpu_top=(
   label=CPU
   icon.drawing=off
   width=0
-  padding_right=5
+  padding_right=10
   y_offset=6
 )
 
@@ -13,7 +13,7 @@ cpu_percent=(
   label.font="$FONT:Heavy:12"
   label=CPU
   y_offset=-4
-  padding_right=5
+  padding_right=10
   width=55
   icon.drawing=off
   update_freq=2

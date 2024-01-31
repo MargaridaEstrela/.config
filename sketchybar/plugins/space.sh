@@ -9,8 +9,8 @@ source "$HOME/.config/sketchybar/icons.sh"
 sketchybar --set $NAME background.drawing=$SELECTED \
 	icon.font.size="12" \
 	icon.highlight=$SELECTED \
-	icon.padding_right="5" \
-	label.highlight=$SELECTED
+	icon.padding_right=5 \
+	label.highlight=$SELECTED \
 
 if [[ $SENDER == "front_app_switched" || $SENDER == "window_change" ]];
 then

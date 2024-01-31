@@ -20,11 +20,9 @@ sketchybar --add item  mem right                                                
            --set mem   update_freq=5                                               \
                        icon.font="$FONT:Regular:15.4"                  \
                        icon.padding_right=4                                        \
-                       icon.color=0xff4ed2e3                                       \
+                       icon.color=$BLUE                                       \
                        icon.y_offset=1                                             \
                        label.font="$FONT:Bold:12.0"                              \
                        label.color=0xffdfe1ea                                      \
-                       label.padding_right=8                                       \
                        script="$PLUGIN_DIR/mem.sh"                                 \
                        icon.padding_left=5                                        \
-                       label.padding_right=5                                       \
