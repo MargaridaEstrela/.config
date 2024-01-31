@@ -26,7 +26,7 @@ window_state() {
     COLOR=$RED
   fi
 
-  args=(--animate sin 10 --bar border_color=$COLOR
+  args=(--animate sin 1 --bar border_color=$COLOR
                          --set $NAME icon.color=$COLOR)
 
   [ -z "$LABEL" ] && args+=(label.width=0) \
@@ -61,7 +61,7 @@ windows_on_spaces () {
     # done <<< "$CURRENT_SPACES"
 
     # sketchybar -m "${args[@]}"
-    /usr/bin/python3 $CONFIG_DIR/plugins/space.py
+    #/usr/bin/python3 $CONFIG_DIR/plugins/space.py
 }
 
 mouse_clicked() {

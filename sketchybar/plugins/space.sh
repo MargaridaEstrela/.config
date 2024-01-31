@@ -49,3 +49,24 @@ then
    sketchybar --set space.$sid label="$LABEL"
  done
 fi
+
+click() {
+  if [ "$BUTTON" = "right" ] || [ "$MODIFIER" = "shift" ]; then
+    SPACE_NAME="${NAME#*.}"
+    SPACE_LABEL="$(osascript -e "return (text returned of (display dialog \"Rename space $SPACE_NAME to:\" default answer \"\" with title \"Space Renamer\" buttons {\"Cancel\", \"Rename\"} default button \"Rename\"))")"
+    if [ $? -eq 0 ]; then
+      if [ "$SPACE_LABEL" = "" ]; then
+        set_space_label "${NAME:6}"
+      else
+        set_space_label "${NAME:6} $SPACE_LABEL"
+      fi
+    fi
+  else
+    yabai -m space --focus $sid 2>/dev/null
+  fi
+}
+
+case "$SENDER" in
+  "mouse.clicked") click
+  ;;
+esac

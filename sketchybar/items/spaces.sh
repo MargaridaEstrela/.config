@@ -14,13 +14,12 @@ do
   space=(
     associated_space=$sid
     icon=${SPACE_ICONS[i]}
-    icon.padding_left=10
+    icon.padding_left=5
     icon.padding_right=10
-    padding_left=2
+    padding_left=5
     padding_right=5
-    label.padding_right=2
     icon.highlight_color=$RED_APPLE
-    label.font="$FONT:Regular:16.0"
+    label.font="$FONT:Regular:20.0"
     label.highlight_color=$RED_APPLE  
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"

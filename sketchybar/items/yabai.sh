@@ -1,6 +1,7 @@
 #!/bin/bash
 
 yabai=(
+  update_freq=2
   script="$PLUGIN_DIR/yabai.sh"
   associated_display=active
 )
