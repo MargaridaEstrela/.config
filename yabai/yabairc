@@ -17,14 +17,16 @@ yabai -m rule --add app="iTerm" space=^1
 yabai -m rule --add app="Code" space=^2
 yabai -m rule --add app="Safari" space=^3
 yabai -m rule --add app="WhatsApp" space=^4
+yabai -m rule --add app="Spotify" space=^5
+yabai -m rule --add app="Discord" space=^6
 
 # open specific windows by default
 yabai -m space 1 --label iterm
 yabai -m space 2 --label code
 yabai -m space 3 --label safari
 yabai -m space 4 --label whatsapp
-
-#yabai -m space --focus whatsapp
+yabai -m space 5 --label spotify
+yabai -m space 6 --label discord
 
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
