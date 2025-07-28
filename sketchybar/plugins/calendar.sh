@@ -41,4 +41,8 @@ case ${MOON_PHASE} in
     ;;
 esac
 
-sketchybar --set $NAME icon="$ICON   $(date '+%a %d. %b')" label="$(date '+%H:%M')"
+DATE="$(date '+%a %d. %b')"
+TIME="$(date '+%H:%M')"
+
+sketchybar --set $NAME icon="$ICON   $(date '+%a %d. %b')" label="$TIME" tooltip="$DATE"
+
